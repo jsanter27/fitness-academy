@@ -1,0 +1,24 @@
+# Designs
+
+/design
+
+# Environment variables
+
+.env
+/client/.env.client
+
+# Dependencies
+
+/client/node_modules
+/node_modules
+
+# Database
+
+/db
+
+# Build
+
+/client/build
+
+# Zip
+santerfitness.zip

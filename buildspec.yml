@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # upgrade AWS CLI
+      - pip install --upgrade awscli
+      # install Node 12
+      - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+      - apt install nodejs
+
+  pre_build:
+    commands:
+      # install server dependencies
+      - npm install
+      # install client dependencies
+      - npm install --prefix client
+  build:
+    commands:
+      # build static files
+      - npm run build --prefix client
+
+  post_build:
+    commands:
+      - chmod -R 755 client/build
+
+artifacts:
+  files:
+    - '**/*'
+      
