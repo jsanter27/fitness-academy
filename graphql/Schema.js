@@ -11,135 +11,70 @@ const GraphQLString = require('graphql').GraphQLString;
 //const GraphQLFloat = require('graphql').GraphQLFloat;
 const GraphQLBoolean = require('graphql').GraphQLBoolean;
 const GraphQLDate = require('graphql-date');
-const PictureModel = require('../models/Picture');
-const EventModel = require('../models/Event');
-const AlertModel = require('../models/Alert');
+const TrialRequestModel = require('../models/TrialRequest');
 
 require('dotenv').config();
 
-const pictureType = new GraphQLObjectType({
-    name: "pictureType",
-    fields: function () {
-        return {
+const trialRequestType = new GraphQLObjectType({
+    name: "trialRequestType",
+    fields: () => (
+        {
             _id: {
                 type: GraphQLString
             },
-            key: {
+            firstName: {
                 type: GraphQLString
             },
-            url: {
+            lastName: {
                 type: GraphQLString
             },
-            isSchedule: {
+            phoneNumber: {
+                type: GraphQLString
+            },
+            email: {
+                type: GraphQLString
+            },
+            resolved: {
                 type: GraphQLBoolean
-            },
-            lastModifiedBy: {
-                type: GraphQLString
             }
         }
-    }
-});
-
-const eventType = new GraphQLObjectType({
-    name: "eventType",
-    fields: function () {
-        return {
-            _id: {
-                type: GraphQLString
-            },
-            name: {
-                type: GraphQLString
-            },
-            description: {
-                type: GraphQLString
-            },
-            instructors: {
-                type: GraphQLList(GraphQLString)
-            },
-            lastModifiedBy: {
-                type: GraphQLString
-            }
-        }
-    }
-});
-
-const alertType = new GraphQLObjectType({
-    name: "alertType",
-    fields: function () {
-        return {
-            _id: {
-                type: GraphQLString
-            },
-            message: {
-                type: GraphQLString
-            },
-            isActive: {
-                type: GraphQLBoolean
-            },
-            isEmergency: {
-                type: GraphQLBoolean
-            },
-            lastModifiedBy: {
-                type: GraphQLString
-            }
-        }
-    }
+    )
 });
 
 const queryType = new GraphQLObjectType({
     name: "Query",
     fields: function () {
         return {
-            getAllSlides: {
-                type: new GraphQLList(pictureType),
+            getAllTrialRequests: {
+                type: new GraphQLList(trialRequestType),
                 resolve: function () {
-                    const slides = PictureModel.find({ isSchedule: false }).exec();
-                    if (!slides){
+                    const trialRequests = TrialRequestModel.find().exec();
+                    if (!trialRequests) {
                         return null;
                     }
-                    return slides;
+                    return trialRequests;
                 }
             },
-            getSchedule: {
-                type: pictureType,
+            getUnresolvedRequests: {
+                type: new GraphQLList(trialRequestType),
                 resolve: function () {
-                    const schedule = PictureModel.findOne({ isSchedule: true }).exec();
-                    if (!schedule){
+                    const trialRequests = TrialRequestModel.find({ resolved: false }).exec();
+                    if (!trialRequests) {
                         return null;
                     }
-                    return schedule;
+                    return trialRequests;
                 }
             },
-            getAllEvents: {
-                type: new GraphQLList(eventType),
+            getResolvedRequests: {
+                type: new GraphQLList(trialRequestType),
                 resolve: function () {
-                    const events = EventModel.find().exec();
-                    if (!events){
+                    const trialRequests = TrialRequestModel.find({ resolved: true }).exec();
+                    if (!trialRequests) {
                         return null;
                     }
-                    return events;
+                    return trialRequests;
                 }
             },
-            getAllAlerts: {
-                type: new GraphQLList(alertType),
-                resolve: function () {
-                    const alerts = AlertModel.find().exec();
-                    if (!alerts){
-                        return null;
-                    }
-                    return alerts;
-                }
-            },
-            getActiveAlerts: {
-                type: new GraphQLList(alertType),
-                resolve: function () {
-                    const alerts = AlertModel.find({ isActive: true }).exec();
-                    if (!alerts){
-                        return null;
-                    }
-                    return alerts;
-                }
-            }
         }
     }
 });
