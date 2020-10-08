@@ -10,7 +10,7 @@ const GraphQLString = require('graphql').GraphQLString;
 //const GraphQLInt = require('graphql').GraphQLInt;
 //const GraphQLFloat = require('graphql').GraphQLFloat;
 const GraphQLBoolean = require('graphql').GraphQLBoolean;
-const GraphQLDate = require('graphql-date');
+//const GraphQLDate = require('graphql-date');
 const TrialRequestModel = require('../models/TrialRequest');
 
 require('dotenv').config();

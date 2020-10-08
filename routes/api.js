@@ -35,15 +35,23 @@ router.post('/trial', (req, res) => {
         sendError(res, "Invalid fields");
     }
 
-    let newTrialRequest = new TrialRequest({ firstName, lastName, phoneNumber, email, resolved: false });
-    
-    newTrialRequest.save((err, trialRequest) => {
+    TrialRequest.findOne({ $or:[{'email': email}, {'phoneNumber': phoneNumber}] }, (err, request) => {
         if (err)
             sendDatabaseError(res);
-        if (!trialRequest)
-            sendError(res, "Could not send request to database");
-        else
-            sendSuccess(res, "Successfully submitted request");
+        if (request)
+            sendError(res, "Request has already been made with that email or phone number");
+        else {
+            let newTrialRequest = new TrialRequest({ firstName, lastName, phoneNumber, email, resolved: false });
+    
+            newTrialRequest.save((err, trialRequest) => {
+                if (err)
+                    sendDatabaseError(res);
+                if (!trialRequest)
+                    sendError(res, "Could not send request to database");
+                else
+                    sendSuccess(res, "Successfully submitted request");
+            });
+        }
     });
 });
 
@@ -53,10 +61,33 @@ router.get('/resolve/:id', authentication, (req, res) => {
     TrialRequest.findById(id, (err, trialRequest) => {
         if (err)
             sendDatabaseError(res);
-        if (!res)
+        if (!trialRequest)
             sendError(res, "Could not find trial request");
+        if (trialRequest.resolved)
+            sendError(res, "Trial request has already been resolved");
         else {
             trialRequest.update({ resolved: true }, (err) => {
+                if (err)
+                    sendError(res, "Could not update request");
+                else
+                    sendSuccess(res, "Successfully resolved request");
+            });
+        }
+    });
+});
+
+router.get('/unresolve/:id', authentication, (req, res) => {
+    const { id } = req.params;
+    
+    TrialRequest.findById(id, (err, trialRequest) => {
+        if (err)
+            sendDatabaseError(res);
+        if (!trialRequest)
+            sendError(res, "Could not find trial request");
+        if (!trialRequest.resolved)
+            sendError(res, "Trial request is already unresolved");
+        else {
+            trialRequest.update({ resolved: false }, (err) => {
                 if (err)
                     sendError(res, "Could not update request");
                 else
