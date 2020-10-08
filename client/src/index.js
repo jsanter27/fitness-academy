@@ -19,9 +19,6 @@ import AdminScheduleScreen from './components/AdminScheduleScreen';
 import AdminForgotPasswordScreen from './components/AdminForgotPasswordScreen';
 import AdminChangePasswordScreen from './components/AdminChangePasswordScreen';
 
-
-//const client = new ApolloClient({ uri: "http://localhost:" + (process.env.PORT || "5000") + "/graphql" });
-
 const client = new ApolloClient({ uri: "/graphql"});
 
 ReactDOM.render(
