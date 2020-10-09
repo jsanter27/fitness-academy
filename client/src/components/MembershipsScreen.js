@@ -1,10 +1,10 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-import SFNavbar from './SFNavbar';
-import SFFooter from './SFFooter';
-import SFCard from './SFCard';
-import SFForm from './SFForm';
+import SFNavbar from './FANavbar';
+import SFFooter from './FAFooter';
+import SFCard from './FACard';
+import SFForm from './FAForm';
 
 const MembershipsScreen = (props) => {
 

@@ -1,19 +1,18 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import { DARK } from '../constants/Colors';
 
-const SFModal = (props) => {
+const FAModal = (props) => {
 
     if (props.message) {
         return (
-            <Modal show={props.show} onHide={props.onHide} className="sf-modal">
-                <Modal.Header className="sf-modal-header" closeButton>
-                    <Modal.Title className="sf-modal-title" style={{color:(props.message.msgError ? "red" : DARK)}}>
+            <Modal show={props.show} onHide={props.onHide} className="fa-modal">
+                <Modal.Header className="fa-modal-header" closeButton>
+                    <Modal.Title className="fa-modal-title" style={{color:(props.message.msgError ? "red" : "black")}}>
                         <b>{props.message.msgError ? "Error" : ""}</b>
                         <b>{!props.message.msgError && props.message.msgBody.trim() !== '' ? "Success" : ""}</b>
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="sf-modal-body">
+                <Modal.Body className="fa-modal-body">
                         {props.message.msgBody}
                 </Modal.Body>
             </Modal>
@@ -21,13 +20,13 @@ const SFModal = (props) => {
     }
     else {
         return (
-            <Modal show={props.show} onHide={props.onHide} className="sf-modal">
-                <Modal.Header className="sf-modal-header" closeButton>
-                    <Modal.Title className="sf-modal-title" style={{color:DARK}}>
+            <Modal show={props.show} onHide={props.onHide} className="fa-modal">
+                <Modal.Header className="fa-modal-header" closeButton>
+                    <Modal.Title className="fa-modal-title">
                         <b>Complete</b>
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="sf-modal-body">
+                <Modal.Body className="fa-modal-body">
                         Please verify that the action has completed
                 </Modal.Body>
             </Modal>
@@ -35,4 +34,4 @@ const SFModal = (props) => {
     }
 };
 
-export default SFModal;
+export default FAModal;

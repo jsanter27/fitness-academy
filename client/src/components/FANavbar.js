@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Navbar, Nav, Image, Row, Col } from 'react-bootstrap';
 import {HouseDoorFill, CalendarDateFill, PeopleFill, EnvelopeFill, List} from 'react-bootstrap-icons';
-import {LIGHT} from '../constants/Colors';
 
-const SFNavbar = (props) => {
+const FANavbar = (props) => {
 
     const [expanded, setExpanded] = useState(false);
 
@@ -31,28 +30,28 @@ const SFNavbar = (props) => {
                 <Col xs={8}>
                     <Navbar.Brand>
                         <Image
-                            src="/sf_logo1.jpg"
-                            className="sf-logo-img"
-                            alt="Santer Fitness Logo"
+                            /* src="/fa-logo1.jpeg" */
+                            className="fa-logo-img"
+                            alt="Fitness Academy Logo"
                             rounded
                             onClick={goToHome}
                         />
                     </Navbar.Brand>
                 </Col>
-                <Col className="sf-nav-toggle">
-                    <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")}><List color={LIGHT} size="3.25em"/></Navbar.Toggle>
+                <Col className="fa-nav-toggle">
+                    <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")}><List/></Navbar.Toggle>
                 </Col>
             </Row>
             <Navbar.Collapse>
                 <Nav className="justify-content-end" style={{width:"100%"}}>
-                    <Nav.Link className="sf-nav-link" onClick={goToHome} disabled={props.admin}><b>Home</b> <HouseDoorFill color={LIGHT} /></Nav.Link>
-                    <Nav.Link className="sf-nav-link" onClick={goToSchedule} disabled={props.admin}><b>Classes</b> <CalendarDateFill color={LIGHT} /></Nav.Link>
-                    <Nav.Link className="sf-nav-link" onClick={goToMemberships} disabled={props.admin}><b>Memberships</b> <PeopleFill color={LIGHT} /></Nav.Link>
-                    <Nav.Link className="sf-nav-link" href="#sf-footer" disabled={props.admin}><b>Contact</b> <EnvelopeFill color={LIGHT} /></Nav.Link>
+                    <Nav.Link className="fa-nav-link" onClick={goToHome} disabled={props.admin}><b>Home</b></Nav.Link>
+                    <Nav.Link className="fa-nav-link" onClick={goToSchedule} disabled={props.admin}><b>Classes</b></Nav.Link>
+                    <Nav.Link className="fa-nav-link" onClick={goToMemberships} disabled={props.admin}><b>Memberships</b></Nav.Link>
+                    <Nav.Link className="fa-nav-link" href="#fa-footer" disabled={props.admin}><b>Contact</b></Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
     );
 }
 
-export default SFNavbar;
+export default FANavbar;

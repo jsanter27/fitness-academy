@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import auth from '../services/authService';
 
-import SFLoading from '../components/SFLoading';
+import SFLoading from '../components/FALoading';
 
 export const AuthContext = createContext();
 

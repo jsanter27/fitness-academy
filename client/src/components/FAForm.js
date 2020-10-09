@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Row, Form, Button } from 'react-bootstrap';
 import api from '../services/apiService';
-import SFModal from './SFModal';
+import SFModal from './FAModal';
 
 const SFForm = () => {
 

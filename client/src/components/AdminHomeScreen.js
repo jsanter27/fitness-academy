@@ -8,9 +8,9 @@ import auth from '../services/authService';
 import { AuthContext } from '../context/AuthContext';
 
 import HomeScreen from './HomeScreen';
-import SFLoading from './SFLoading';
-import SFError from './SFError';
-import SFModal from './SFModal';
+import SFLoading from './FALoading';
+import SFError from './FAError';
+import SFModal from './FAModal';
 
 const GET_HOME = gql`
     query{

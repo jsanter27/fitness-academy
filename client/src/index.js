@@ -4,7 +4,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './css/main.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './services/serviceWorker';
 import AuthProvider from './context/AuthContext';
 import PrivateRoute from './hocs/PrivateRoute';
@@ -15,7 +15,6 @@ import ScheduleScreen from './components/ScheduleScreen';
 import MembershipsScreen from './components/MembershipsScreen';
 import AdminLoginScreen from './components/AdminLoginScreen';
 import AdminHomeScreen from './components/AdminHomeScreen';
-import AdminScheduleScreen from './components/AdminScheduleScreen';
 import AdminForgotPasswordScreen from './components/AdminForgotPasswordScreen';
 import AdminChangePasswordScreen from './components/AdminChangePasswordScreen';
 
@@ -30,7 +29,6 @@ ReactDOM.render(
           <Route path='/schedule' component={ScheduleScreen} />
           <Route path='/memberships' component={MembershipsScreen} />
           <PrivateRoute exact path='/admin' component={AdminHomeScreen} />
-          <PrivateRoute path='/admin/schedule' component={AdminScheduleScreen} />
           <UnPrivateRoute path='/admin/login' component={AdminLoginScreen} />
           <UnPrivateRoute path='/admin/forgot' component={AdminForgotPasswordScreen} />
           <UnPrivateRoute path='/admin/reset/:token' component={AdminChangePasswordScreen} />

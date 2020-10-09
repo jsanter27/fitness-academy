@@ -3,7 +3,7 @@ import { Container, Row, Form, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import auth from '../services/authService';
 import { AuthContext } from '../context/AuthContext';
-import SFModal from './SFModal';
+import SFModal from './FAModal';
 
 const AdminLoginScreen = () => {
 

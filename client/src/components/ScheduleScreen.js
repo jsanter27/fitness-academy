@@ -3,10 +3,10 @@ import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 import { Row, Col, Image } from 'react-bootstrap';
 
-import SFNavbar from './SFNavbar';
-import SFFooter from './SFFooter';
-import SFLoading from './SFLoading';
-import SFError from './SFError';
+import SFNavbar from './FANavbar';
+import SFFooter from './FAFooter';
+import SFLoading from './FALoading';
+import SFError from './FAError';
 
 const GET_SCHEDULE = gql`
     query{
