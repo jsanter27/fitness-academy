@@ -10949,6 +10949,20 @@ strong {
   text-align: center;
 }
 
+.fa-schedule-img {
+  padding: 1em;
+}
+
+.fa-login {
+  width: 100%;
+}
+
+.fa-login-group {
+  width: 100%;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
 @media only screen and (max-device-width: 575px) {
   .fa-video-player {
     margin-bottom: -3em;

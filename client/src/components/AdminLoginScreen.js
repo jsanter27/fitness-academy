@@ -1,9 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Container, Row, Form, Button} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import auth from '../services/authService';
 import { AuthContext } from '../context/AuthContext';
-import SFModal from './FAModal';
+import Modal from './FAModal';
 
 const AdminLoginScreen = () => {
 
@@ -61,31 +60,33 @@ const AdminLoginScreen = () => {
         btnDisabled = false;
 
     return (
-        <Container className="sf-login-container">
-            <Row className="d-flex justify-content-center">
-                <h3><b>Admin Login</b></h3>
+        <Container className="fa-container" fluid="xl">
+            <Row className="fa-header-row1 d-flex justify-content-center">
+                <h3>Admin Login</h3>
             </Row>
-            <Form onSubmit={handleSubmit}>
-                <Row>
-                    <Form.Group style={{width:"100%"}}>
-                        <Form.Label>Email:</Form.Label>
-                        <Form.Control type="email" value={userInput.username} id="username" name="username" onChange={handleChange} />
-                    </Form.Group>
-                </Row>
-                <Row>
-                    <Form.Group style={{width:"100%"}}>
-                        <Form.Label>Password:</Form.Label>
-                        <Form.Control type="password" value={userInput.password} id="password" name="password" onChange={handleChange} />
-                    </Form.Group>
-                </Row>
-                <Row className="d-flex justify-content-center" style={{marginBottom:".5em"}}>
-                    <Button variant="dark" type="submit" size="lg" disabled={btnDisabled}>Login</Button>
-                </Row>
-                <Row className="d-flex justify-content-center">
-                    <Link to="/admin/forgot">Forgot Password?</Link>
-                </Row>
-            </Form>
-            <SFModal show={modal.show} onHide={handleClose} message={modal.message} />
+            <Row className="fa-paragraph-row1 d-flex justify-content-center" style={{paddingTop:"10%", paddingBottom:"100%"}}>
+                <Form className="fa-login" onSubmit={handleSubmit}>
+                    <Row className="d-flex justify-content-center">
+                        <Form.Group className="fa-login-group">
+                            <Form.Label><b>Email Address:</b></Form.Label>
+                            <Form.Control type="email" value={userInput.username} id="username" name="username" onChange={handleChange} />
+                        </Form.Group>
+                    </Row>
+                    <Row className="d-flex justify-content-center">
+                        <Form.Group className="fa-login-group">
+                            <Form.Label><b>Password:</b></Form.Label>
+                            <Form.Control type="password" value={userInput.password} id="password" name="password" onChange={handleChange} />
+                        </Form.Group>
+                    </Row>
+                    <Row className="d-flex justify-content-center">
+                        <Button style={{marginTop:"1em"}} className="fa-button" variant="primary" type="submit" size="lg" disabled={btnDisabled}>Login</Button>
+                    </Row>
+                    <Row className="d-flex justify-content-center">
+                    </Row>
+                </Form>
+            <Modal show={modal.show} onHide={handleClose} message={modal.message} />
+            </Row>
+            
         </Container>
     );
 };
