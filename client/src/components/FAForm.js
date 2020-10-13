@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Row, Form, Button } from 'react-bootstrap';
+import { Row, Col, Form, Button } from 'react-bootstrap';
 import api from '../services/apiService';
-import SFModal from './FAModal';
+import Modal from './FAModal';
 
-const SFForm = () => {
+const FAForm = () => {
 
     const [form, setForm] = useState({
         firstName: "",
         lastName: "",
         email: "",
-        phone: ""
+        phoneNumber: ""
     });
 
     const [show, setShow] = useState(false);
@@ -42,7 +42,7 @@ const SFForm = () => {
             firstName: form.firstName,
             lastName: form.lastName,
             email: form.email,
-            phone: form.phone
+            phoneNumber: form.phoneNumber
         }).then( (result) => {
             setMessage(result.message);
             setShow(true);
@@ -50,7 +50,7 @@ const SFForm = () => {
                 firstName: "",
                 lastName: "",
                 email: "",
-                phone: ""
+                phoneNumber: ""
             });
         });
     }
@@ -58,41 +58,43 @@ const SFForm = () => {
     const phoneregex = /^\(?([0-9]{3})\)?([0-9]{3})([0-9]{4})$/;
     const emailregex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let isDisabled = false;
-    if (form.firstName.trim() === "" || form.lastName.trim() === "" || form.email.trim() === "" || form.phone.trim() === "" || !phoneregex.test(form.phone) || !emailregex.test(form.email))
+    if (form.firstName.trim() === "" || form.lastName.trim() === "" || form.email.trim() === "" || form.phoneNumber.trim() === "" || !phoneregex.test(form.phoneNumber) || !emailregex.test(form.email))
         isDisabled= true;
 
     return (
-        <Row className="sf-home-row1 d-flex justify-content-center">
-            <Form className="sf-home-form" onSubmit={handleSubmit}>
-                <Form.Group controlId="firstName">
-                    <Form.Label>First Name:</Form.Label>
-                    <Form.Control name="firstName" type="text" value={form.firstName} placeholder="Ex. John" onChange={handleChange}/>
-                </Form.Group>
-                <Form.Group controlId="lastName">
-                    <Form.Label>Last Name:</Form.Label>
-                    <Form.Control name="lastName" type="text" value={form.lastName} placeholder="Ex. Smith" onChange={handleChange}/>
-                </Form.Group>
-                <Form.Group controlId="email">
-                    <Form.Label>Email Address:</Form.Label>
-                    <Form.Control name="email" type="email" value={form.email} placeholder="Ex: info@santerfitness.com" onChange={handleChange}/>
-                </Form.Group>
-                <Form.Group controlId="phone">
-                    <Form.Label>Phone Number:</Form.Label>
-                    <Form.Control name="phone" type="text" value={form.phone} placeholder="Ex: 8454969188" onChange={handleChange}/>
-                </Form.Group>
-                <div className="sf-home-form-button">
-                    <Button type="submit" variant="dark" size="lg" block disabled={isDisabled}>
-                        Submit
-                    </Button>
-                </div>
-                <Form.Text className="sf-home-form-footer">
-                    After submitting, check in at the front desk by giving your name and showing an ID.<br/>
-                    <b>All fields required.</b>
-                </Form.Text>
-            </Form>
-            <SFModal show={show} onHide={handleClose} message={message}/>
+        <Row className="fa-paragraph-row1">
+            <Col className="d-flex justify-content-center">
+                <Form className="fa-form" onSubmit={handleSubmit}>
+                    <Form.Group className="fa-form-group" controlId="firstName">
+                        <Form.Label><b>First Name:</b></Form.Label>
+                        <Form.Control name="firstName" type="text" value={form.firstName} placeholder="John" onChange={handleChange}/>
+                    </Form.Group>
+                    <Form.Group className="fa-form-group" controlId="lastName">
+                        <Form.Label><b>Last Name:</b></Form.Label>
+                        <Form.Control name="lastName" type="text" value={form.lastName} placeholder="Smith" onChange={handleChange}/>
+                    </Form.Group>
+                    <Form.Group className="fa-form-group" controlId="email">
+                        <Form.Label><b>Email Address:</b></Form.Label>
+                        <Form.Control name="email" type="email" value={form.email} placeholder="coachsanter1031@yahoo.com" onChange={handleChange}/>
+                    </Form.Group>
+                    <Form.Group className="fa-form-group" controlId="phoneNumber">
+                        <Form.Label><b>Phone Number:</b></Form.Label>
+                        <Form.Control name="phoneNumber" type="text" value={form.phoneNumber} placeholder="8457813077" onChange={handleChange}/>
+                    </Form.Group>
+                    <div className="fa-button-container d-flex justify-content-center">
+                        <Button className="fa-button" type="submit" variant="primary" size="lg" block disabled={isDisabled}>
+                            Submit Request
+                        </Button>
+                    </div>
+                    <Form.Text className="fa-form-footer">
+                        All requests are reviewed by staff and may take time to process.<br/>
+                        <b>All fields required.</b>
+                    </Form.Text>
+                </Form>
+                <Modal show={show} onHide={handleClose} message={message}/>
+            </Col>
         </Row>
     );
 }
 
-export default SFForm;
+export default FAForm;

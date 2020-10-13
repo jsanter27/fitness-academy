@@ -12,11 +12,9 @@ import UnPrivateRoute from './hocs/UnPrivateRoute';
 
 import HomeScreen from './components/HomeScreen';
 import ScheduleScreen from './components/ScheduleScreen';
-import MembershipsScreen from './components/MembershipsScreen';
+import SignUpScreen from './components/SignUpScreen';
 import AdminLoginScreen from './components/AdminLoginScreen';
-import AdminHomeScreen from './components/AdminHomeScreen';
-import AdminForgotPasswordScreen from './components/AdminForgotPasswordScreen';
-import AdminChangePasswordScreen from './components/AdminChangePasswordScreen';
+import AdminScreen from './components/AdminScreen';
 
 const client = new ApolloClient({ uri: "/graphql"});
 
@@ -27,11 +25,9 @@ ReactDOM.render(
         <Router>
           <Route exact path='/' component={HomeScreen} />
           <Route path='/schedule' component={ScheduleScreen} />
-          <Route path='/memberships' component={MembershipsScreen} />
-          <PrivateRoute exact path='/admin' component={AdminHomeScreen} />
+          <Route path='/signup' component={SignUpScreen} />
+          <PrivateRoute exact path='/admin' component={AdminScreen} />
           <UnPrivateRoute path='/admin/login' component={AdminLoginScreen} />
-          <UnPrivateRoute path='/admin/forgot' component={AdminForgotPasswordScreen} />
-          <UnPrivateRoute path='/admin/reset/:token' component={AdminChangePasswordScreen} />
         </Router>
       </AuthProvider>
     </ApolloHooksProvider>

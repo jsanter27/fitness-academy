@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Navbar, Nav, Image, Row, Col } from 'react-bootstrap';
-import {HouseDoorFill, CalendarDateFill, PeopleFill, EnvelopeFill, List} from 'react-bootstrap-icons';
+import { Navbar, Nav, Row, Col } from 'react-bootstrap';
+import { List } from 'react-bootstrap-icons';
 
 const FANavbar = (props) => {
 
@@ -21,7 +21,7 @@ const FANavbar = (props) => {
     };
 
     const goToMemberships = () => {
-        history.push("/memberships");
+        history.push("/signup");
     }
 
     return (
@@ -39,7 +39,7 @@ const FANavbar = (props) => {
                     </Navbar.Brand>
                 </Col> */}
                 <Col className="fa-nav-toggle">
-                    <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")}><List/></Navbar.Toggle>
+                    <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")}><List size="1.5em"/></Navbar.Toggle>
                 </Col>
             </Row>
             <Navbar.Collapse>

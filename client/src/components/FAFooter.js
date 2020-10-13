@@ -25,7 +25,7 @@ const FAFooter = () => {
                                         <b>Weekdays</b><br/>5:00am - 11:00pm
                                     </ListGroup.Item>
                                     <ListGroup.Item className="fa-hours-list-item">
-                                        <b>Weekend</b><br/>7:00am - 8:00pm
+                                        <b>Weekends</b><br/>7:00am - 8:00pm
                                     </ListGroup.Item>
                                 </ListGroup>
                             </Col>
