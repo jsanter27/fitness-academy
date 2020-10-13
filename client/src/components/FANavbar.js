@@ -43,11 +43,11 @@ const FANavbar = (props) => {
                 </Col>
             </Row>
             <Navbar.Collapse>
-                <Nav className="justify-content-end" style={{width:"100%"}}>
-                    <Nav.Link className="fa-nav-link" onClick={goToHome} disabled={props.admin}><b>Home</b></Nav.Link>
-                    <Nav.Link className="fa-nav-link" onClick={goToSchedule} disabled={props.admin}><b>Schedule</b></Nav.Link>
-                    <Nav.Link className="fa-nav-link" onClick={goToMemberships} disabled={props.admin}><b>Memberships</b></Nav.Link>
-                    <Nav.Link className="fa-nav-link" href="#fa-footer" disabled={props.admin}><b>Contact</b></Nav.Link>
+                <Nav className="fa-nav justify-content-start" style={{width:"100%"}}>
+                    <Nav.Link className="fa-nav-link" onClick={goToHome} disabled={props.admin}>Home</Nav.Link>
+                    <Nav.Link className="fa-nav-link" onClick={goToSchedule} disabled={props.admin}>Schedule</Nav.Link>
+                    <Nav.Link className="fa-nav-link" onClick={goToMemberships} disabled={props.admin}>Sign Up</Nav.Link>
+                    <Nav.Link className="fa-nav-link" href="#fa-footer" disabled={props.admin}>Contact</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

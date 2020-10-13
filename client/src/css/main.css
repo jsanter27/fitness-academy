@@ -10832,12 +10832,21 @@ a.text-dark:hover, a.text-dark:focus {
   --fa-header: #7b212d;
 }
 
-#root {
+root {
   width: 100%;
 }
 
 body {
   background-color: var(--fa-light);
+}
+
+b,
+strong {
+  color: var(--fa-primary);
+}
+
+.fa-container {
+  padding: 0em;
 }
 
 .fa-footer {
@@ -10846,6 +10855,8 @@ body {
 
 .fa-footer-bottom {
   background-color: var(--fa-primary);
+  color: white;
+  padding-top: .5em;
 }
 
 .fa-header-row1 {
@@ -10853,7 +10864,7 @@ body {
   margin-left: 0em;
   width: 100%;
   padding: .5em;
-  color: var(--fa-accent);
+  color: var(--fa-primary);
   font-family: edo;
 }
 
@@ -10861,5 +10872,57 @@ body {
   background-color: white;
   margin-left: 0em;
   width: 100%;
+  padding: .5em;
+  font-size: 1em;
+  text-align: center;
+}
+
+.fa-footer-title1 {
+  background-color: var(--fa-alternate);
+  font-family: edo;
+  color: var(--fa-primary);
+}
+
+.fa-hours-list {
+  width: 75%;
+  margin: 1em;
+}
+
+.fa-hours-list-item {
+  text-align: center;
+}
+
+.fa-nav {
+  font-family: edo;
+  font-size: 1.25em;
+}
+
+.fa-contact-info {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.fa-contact-icon {
+  color: var(--fa-primary);
+  font-size: 1.5em;
+}
+
+.fa-social-button {
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
+.fa-video-row {
+  background-color: white;
+  margin-left: 0em;
+  width: 100%;
+  padding-bottom: .25em;
+}
+
+@media only screen and (max-device-width: 575px) {
+  .fa-video-player {
+    margin-bottom: -3em;
+    margin-top: -3em;
+  }
 }
 /*# sourceMappingURL=main.css.map */

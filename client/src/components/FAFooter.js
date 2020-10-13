@@ -11,60 +11,42 @@ const FAFooter = () => {
     return(
         <IconContext.Provider value={{className:"contact-icons"}}>
             <Col className="fa-footer" id="fa-footer">
-                <Row className="fa-footer-top">
+                <Row className="fa-footer-top" xs={1}>
                     <Col>
                         <Row className="fa-footer-title1">
-                            <Col className="d-flex justify-content-start">
-                                <h5><b>Hours</b></h5>
+                            <Col className="d-flex justify-content-center">
+                                <h3>Hours</h3>
                             </Col>
                         </Row>
                         <Row>
-                            <Col className="d-flex justify-content-start">
+                            <Col className="d-flex justify-content-center">
                                 <ListGroup className="fa-hours-list">
                                     <ListGroup.Item className="fa-hours-list-item">
-                                        <b>Sunday</b><br/>7:00am - 5:00pm
+                                        <b>Weekdays</b><br/>5:00am - 11:00pm
                                     </ListGroup.Item>
                                     <ListGroup.Item className="fa-hours-list-item">
-                                        <b>Monday</b><br/>5:00am - 10:00pm
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="fa-hours-list-item">
-                                        <b>Tueday</b><br/>5:00am - 10:00pm
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="fa-hours-list-item">
-                                        <b>Wednesday</b><br/>5:00am - 10:00pm
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="fa-hours-list-item">
-                                        <b>Thursday</b><br/>5:00am - 10:00pm
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="fa-hours-list-item">
-                                        <b>Friday</b><br/>5:00am - 9:00pm
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="fa-hours-list-item">
-                                        <b>Saturday</b><br/>7:00am - 7:00pm
+                                        <b>Weekend</b><br/>7:00am - 8:00pm
                                     </ListGroup.Item>
                                 </ListGroup>
                             </Col>
                         </Row>
                     </Col>
                     <Col className="fa-footer-info">
-                        <Row className="fa-footer-title2 d-flex justify-content-start">
-                            <h5><b>Contact</b></h5>
+                        <Row className="fa-footer-title1 d-flex justify-content-center">
+                            <h3>Contact</h3>
                         </Row>
-                        <Row className="d-flex justify-content-start">
+                        <Row className="d-flex justify-content-center">
                             <p className="fa-contact-info">
-                                <FaBuilding/><br/>
+                                <FaBuilding className="fa-contact-icon"/><br/>
                                 153 Temple Hill Road<br/>
                                 New Windsor, NY<br/><br/>
-                                <AiFillPhone/><br/>
-                                (845) 781-3077<br/><br/>
-                                <GrMail /><br/>
-                                coachsanter1031@yahoo.com<br/>
+                                <AiFillPhone className="fa-contact-icon"/><br/>
+                                <a href="tel:8457813077">(845) 781-3077</a><br/><br/>
+                                <GrMail className="fa-contact-icon"/><br/>
+                                <a href="mailto:coachsanter1031@yahoo.com">coachsanter1031@yahoo.com</a><br/>
                             </p>
                         </Row>
-                        <Row className="fa-footer-title2 d-flex justify-content-start">
-                            <h5><b>Social Media</b></h5>
-                        </Row>
-                        <Row className="d-flex justify-content-start" style={{marginBottom: "1.5em"}}>
+                        <Row className="d-flex justify-content-center" style={{marginBottom: "1.5em"}}>
                             <div className="fa-contact-info">
                                 <SocialIcon className="fa-social-button" url="https://www.facebook.com/fitnessacademyHV/"/>
                                 <SocialIcon className="fa-social-button" url="https://twitter.com/fit_academy_hv" />
