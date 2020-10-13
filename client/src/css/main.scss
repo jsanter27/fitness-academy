@@ -1,0 +1,52 @@
+$theme-colors: (
+    "primary":  #04618b,
+    "secondary": #818181
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@font-face {
+    font-family: edo;
+    src: url(edo.ttf);
+
+}
+
+:root {
+    --fa-primary: #04618b;
+    --fa-secondary: #818181;
+    --fa-accent: #ef0b0d;
+    --fa-light: #eadada;
+    --fa-alternate: #71a9cc;
+    --fa-header: #7b212d;
+}
+
+#root {
+    width: 100%;
+}
+
+body {
+    background-color: var(--fa-light);
+}
+
+.fa-footer {
+    background-color: white;
+}
+
+.fa-footer-bottom {
+    background-color: var(--fa-primary);
+}
+
+.fa-header-row1 {
+    background-color: var(--fa-alternate);
+    margin-left: 0em;
+    width: 100%;
+    padding: .5em;
+    color: var(--fa-accent);
+    font-family: edo;
+}
+
+.fa-paragraph-row1 {
+    background-color: white;
+    margin-left: 0em;
+    width: 100%;
+}

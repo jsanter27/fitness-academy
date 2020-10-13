@@ -25,19 +25,19 @@ const FANavbar = (props) => {
     }
 
     return (
-        <Navbar bg="dark" variant="primary" expand="sm" expanded={expanded}>
+        <Navbar bg="primary" variant="dark" expand="sm" expanded={expanded}>
             <Row>
-                <Col xs={8}>
+                {/* <Col xs={8}>
                     <Navbar.Brand>
                         <Image
-                            /* src="/fa-logo1.jpeg" */
+                            src="/fa-logo1.png"
                             className="fa-logo-img"
                             alt="Fitness Academy Logo"
                             rounded
                             onClick={goToHome}
                         />
                     </Navbar.Brand>
-                </Col>
+                </Col> */}
                 <Col className="fa-nav-toggle">
                     <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")}><List/></Navbar.Toggle>
                 </Col>
@@ -45,7 +45,7 @@ const FANavbar = (props) => {
             <Navbar.Collapse>
                 <Nav className="justify-content-end" style={{width:"100%"}}>
                     <Nav.Link className="fa-nav-link" onClick={goToHome} disabled={props.admin}><b>Home</b></Nav.Link>
-                    <Nav.Link className="fa-nav-link" onClick={goToSchedule} disabled={props.admin}><b>Classes</b></Nav.Link>
+                    <Nav.Link className="fa-nav-link" onClick={goToSchedule} disabled={props.admin}><b>Schedule</b></Nav.Link>
                     <Nav.Link className="fa-nav-link" onClick={goToMemberships} disabled={props.admin}><b>Memberships</b></Nav.Link>
                     <Nav.Link className="fa-nav-link" href="#fa-footer" disabled={props.admin}><b>Contact</b></Nav.Link>
                 </Nav>

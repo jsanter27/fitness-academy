@@ -66,9 +66,9 @@ const FAFooter = () => {
                         </Row>
                         <Row className="d-flex justify-content-start" style={{marginBottom: "1.5em"}}>
                             <div className="fa-contact-info">
-                                <SocialIcon className="fa-social-button" url="https://www.facebook.com/Santer-Fitness-227206090662880/?ref_type=bookmark"/>
-                                <SocialIcon className="fa-social-button" url="https://twitter.com/santerfitness" />
-                                <SocialIcon className="fa-social-button" url="https://www.instagram.com/santerfitness/" /> 
+                                <SocialIcon className="fa-social-button" url="https://www.facebook.com/fitnessacademyHV/"/>
+                                <SocialIcon className="fa-social-button" url="https://twitter.com/fit_academy_hv" />
+                                <SocialIcon className="fa-social-button" url="https://www.instagram.com/_fitness.academy_/" /> 
                             </div>
                         </Row>
                     </Col>

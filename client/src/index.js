@@ -4,7 +4,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/main.css';
 import * as serviceWorker from './services/serviceWorker';
 import AuthProvider from './context/AuthContext';
 import PrivateRoute from './hocs/PrivateRoute';
