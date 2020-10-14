@@ -12,7 +12,7 @@ require('dotenv').config();
 
 const schema = require('./graphql/Schema');
 
-mongoose.connect(process.env.MONGO_URL, { promiseLibrary: bluebird, useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_URL, { promiseLibrary: bluebird, useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
     .then(() => console.log('Successfully connected to database...'))
     .catch((err) => console.error(err));
 

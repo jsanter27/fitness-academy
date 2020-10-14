@@ -21,6 +21,12 @@ const FATable = (props) => {
         }
     }
 
+    const handleDelete = (id) => {
+        api.removeRequest(id).then( (result) => {
+            refetch();
+        });
+    }
+
     if (!data[0]) {
         return null;
     }
@@ -49,6 +55,14 @@ const FATable = (props) => {
                                 <Button variant={dataType === 'unresolved' ? 'success' : 'warning'} size="sm" onClick={() => handleAction(trial._id)}>
                                     {dataType === 'unresolved' ? 'Resolve' : 'Unresolve'}
                                 </Button>
+                                {dataType === 'resolved' ?
+                                    <div>
+                                        <br />
+                                        <Button variant="danger" size="sm" onClick={() => handleDelete(trial._id)}>
+                                            Delete
+                                        </Button>
+                                    </div>
+                                : null }
                             </td>
                        </tr>
                     ))

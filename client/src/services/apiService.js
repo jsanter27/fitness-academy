@@ -22,5 +22,8 @@ export default {
     },
     unresolveTrialRequest : (id) => {
         return axios.get(`/api/unresolve/${id}`).then(getResponse).catch(catchErrors);
+    },
+    removeRequest : (id) => {
+        return axios.get(`/api/delete/${id}`).then(getResponse).catch(catchErrors);
     }
 }

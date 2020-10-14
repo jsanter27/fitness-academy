@@ -97,4 +97,18 @@ router.get('/unresolve/:id', authentication, (req, res) => {
     });
 });
 
+router.get('/delete/:id', authentication, (req, res) => {
+    const { id } = req.params;
+
+    TrialRequest.findByIdAndRemove(id, (err, trialRequest) => {
+        if (err)
+            sendDatabaseError(res);
+        if (!trialRequest)
+            sendError(res, "Could not find trial request");
+        else {
+            sendSuccess(res, "Successfully removed request");
+        }
+    });
+});
+
 module.exports = router;
