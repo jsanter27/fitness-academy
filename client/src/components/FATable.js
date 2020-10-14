@@ -7,15 +7,18 @@ const FATable = (props) => {
     let dataType = props.dataType;
     let data = props.data;
     let refetch = props.refetch;
+    let setMsg = props.setMsg;
 
     const handleAction = (id) => {
         if (dataType === 'unresolved') {
             api.resolveTrialRequest(id).then( (result) => {
+                setMsg(result.message);
                 refetch();
             });
         }
         else if (dataType === 'resolved') {
             api.unresolveTrialRequest(id).then( (result) => {
+                setMsg(result.message);
                 refetch();
             })
         }
@@ -23,6 +26,7 @@ const FATable = (props) => {
 
     const handleDelete = (id) => {
         api.removeRequest(id).then( (result) => {
+            setMsg(result.message);
             refetch();
         });
     }

@@ -91,7 +91,7 @@ router.get('/unresolve/:id', authentication, (req, res) => {
                 if (err)
                     sendError(res, "Could not update request");
                 else
-                    sendSuccess(res, "Successfully resolved request");
+                    sendSuccess(res, "Successfully unresolved request");
             });
         }
     });

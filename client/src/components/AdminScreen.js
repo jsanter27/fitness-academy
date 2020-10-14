@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
+import { Link } from 'react-router-dom';
 import { Container, Button, Row, Tabs, Tab } from 'react-bootstrap';
 import auth from '../services/authService';
 import { AuthContext } from '../context/AuthContext';
@@ -33,6 +34,11 @@ const AdminHomeScreen = () => {
 
     const { setUser, setIsAuthenticated } = useContext(AuthContext);
 
+    const [msg, setMsg] = useState({
+        msgBody: "",
+        msgError: false
+    });
+
     const { data, loading, error, refetch } = useQuery(GET_REQUESTS);
 
     if (loading) {
@@ -55,7 +61,13 @@ const AdminHomeScreen = () => {
                 <h3>Trial Requests</h3>
             </Row>
             <Row className="fa-paragraph-row1 d-flex justify-content-center">
-                <Button className="fa-button" variant='danger' block size="lg" style={{marginTop:"1em", marginBottom:"3em"}} onClick={logOut}>Log Out</Button>
+                <Button className="fa-button" variant='danger' block size="lg" style={{marginTop:"1em", marginBottom:"1.5em"}} onClick={logOut}>Log Out</Button>
+            </Row>
+            <Row className="fa-paragraph-row1 d-flex justify-content-center" style={{paddingBottom:"1.5em"}}>
+                <Link to="/"><b>Home</b></Link>
+            </Row>
+            <Row className="fa-paragraph-row1 d-flex justify-content-center">
+                <p style={{color:(msg.msgError ? "red" : (msg.msgBody === "" ? "white" : "black"))}}>{msg.msgBody !== "" ? msg.msgBody : "Hidden Text Here"}</p>
             </Row>
             <Row className="fa-tab-row1 d-flex justify-content-center">
                 <Tabs className="fa-tabs" defaultActiveKey="unresolved" id="fa-tabs">
@@ -64,6 +76,7 @@ const AdminHomeScreen = () => {
                             data={data.getUnresolvedRequests}
                             dataType={"unresolved"}
                             refetch={refetch}
+                            setMsg={setMsg}
                         />
                     </Tab>
                     <Tab className="fa-tab" eventKey="resolved" title="Resolved">
@@ -71,6 +84,7 @@ const AdminHomeScreen = () => {
                             data={data.getResolvedRequests}
                             dataType={"resolved"}
                             refetch={refetch}
+                            setMsg={setMsg}
                         />
                     </Tab>
                 </Tabs>
