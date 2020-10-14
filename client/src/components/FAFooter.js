@@ -5,6 +5,7 @@ import { AiFillPhone } from 'react-icons/ai';
 import { GrMail } from 'react-icons/gr';
 import { FaBuilding } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
+import { Link } from 'react-router-dom';
 
 const FAFooter = () => {
 
@@ -57,6 +58,9 @@ const FAFooter = () => {
                 </Row>
                 <Row className="fa-footer-bottom d-flex justify-content-center">
                     <p>Copyright © 2020 - Fitness Academy Hudson Valley</p>
+                </Row>
+                <Row className="fa-footer-bottom d-flex justify-content-center" style={{paddingTop:"0em"}}>
+                    <Link to="/admin" className="fa-admin-link">Admin</Link>
                 </Row>
             </Col>
         </IconContext.Provider>

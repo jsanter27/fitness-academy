@@ -10856,7 +10856,8 @@ strong {
 .fa-footer-bottom {
   background-color: var(--fa-primary);
   color: white;
-  padding-top: .5em;
+  padding-top: .75em;
+  text-align: center;
 }
 
 .fa-header-row1 {
@@ -10961,6 +10962,45 @@ strong {
   width: 100%;
   padding-left: 20%;
   padding-right: 20%;
+}
+
+.fa-tab-row1 {
+  min-height: 100vh;
+  margin-left: 0em;
+  width: 100%;
+  background-color: white;
+}
+
+.fa-tab-row2 {
+  margin-left: 0em;
+  width: 100%;
+  background-color: white;
+}
+
+.fa-tabs {
+  height: 3em;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.fa-tab {
+  margin-top: -90%;
+  width: 100%;
+}
+
+.fa-table {
+  width: 100%;
+}
+
+.fa-admin-link {
+  font-size: .8em;
+  padding-bottom: 1.5em;
+  color: var(--fa-alternate);
+}
+
+.fa-loading-text {
+  padding: 50%;
 }
 
 @media only screen and (max-device-width: 575px) {

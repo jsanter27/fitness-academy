@@ -3,6 +3,7 @@ import { Container, Row, Form, Button} from 'react-bootstrap';
 import auth from '../services/authService';
 import { AuthContext } from '../context/AuthContext';
 import Modal from './FAModal';
+import { Link } from 'react-router-dom';
 
 const AdminLoginScreen = () => {
 
@@ -64,7 +65,7 @@ const AdminLoginScreen = () => {
             <Row className="fa-header-row1 d-flex justify-content-center">
                 <h3>Admin Login</h3>
             </Row>
-            <Row className="fa-paragraph-row1 d-flex justify-content-center" style={{paddingTop:"10%", paddingBottom:"100%"}}>
+            <Row className="fa-tab-row1 d-flex justify-content-center" style={{paddingTop:"2em"}}>
                 <Form className="fa-login" onSubmit={handleSubmit}>
                     <Row className="d-flex justify-content-center">
                         <Form.Group className="fa-login-group">
@@ -81,7 +82,8 @@ const AdminLoginScreen = () => {
                     <Row className="d-flex justify-content-center">
                         <Button style={{marginTop:"1em"}} className="fa-button" variant="primary" type="submit" size="lg" disabled={btnDisabled}>Login</Button>
                     </Row>
-                    <Row className="d-flex justify-content-center">
+                    <Row className="d-flex justify-content-center" style={{padding:"1em"}}>
+                        <Link to="/"><b>Home</b></Link>
                     </Row>
                 </Form>
             <Modal show={modal.show} onHide={handleClose} message={modal.message} />

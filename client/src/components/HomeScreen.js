@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Image, Container, Carousel } from 'react-bootstrap';
+import { Row, Col, Image, Container } from 'react-bootstrap';
 import ReactPlayer from 'react-player';
 
 import Navbar from './FANavbar';

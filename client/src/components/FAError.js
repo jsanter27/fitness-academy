@@ -1,17 +1,14 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 
-const SFError = (props) => {
+const FAError = () => {
     return (
-        <Container>
+        <Container className="fa-container" fluid="xl">
             <Row className="my-auto d-flex justify-content-center">
-                <h2 className="sf-loading-text">An unexpected error has occurred</h2>
-            </Row>
-            <Row className="my-auto d-flex justify-content-center">
-                <h4 className="sf-loading-text">Please check back later</h4>
+                <h2 className="fa-loading-text">Error</h2>
             </Row>
         </Container>
     )
 }
 
-export default SFError;
+export default FAError;
