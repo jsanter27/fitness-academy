@@ -66,7 +66,7 @@ router.get('/resolve/:id', authentication, (req, res) => {
         if (trialRequest.resolved)
             sendError(res, "Trial request has already been resolved");
         else {
-            trialRequest.update({ resolved: true }, (err) => {
+            trialRequest.updateOne({ resolved: true }, (err) => {
                 if (err)
                     sendError(res, "Could not update request");
                 else
@@ -87,7 +87,7 @@ router.get('/unresolve/:id', authentication, (req, res) => {
         if (!trialRequest.resolved)
             sendError(res, "Trial request is already unresolved");
         else {
-            trialRequest.update({ resolved: false }, (err) => {
+            trialRequest.updateOne({ resolved: false }, (err) => {
                 if (err)
                     sendError(res, "Could not update request");
                 else
