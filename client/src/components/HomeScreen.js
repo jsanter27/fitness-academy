@@ -34,6 +34,7 @@ const HomeScreen = (props) => {
                         muted
                         config={{ file: { attributes: { disablepictureinpicture: 'true' }}}}
                         loop
+                        playsinline
                      />
                 </Col>
             </Row>
@@ -57,6 +58,7 @@ const HomeScreen = (props) => {
                         muted
                         config={{ file: { attributes: { disablepictureinpicture: 'true' }}}}
                         loop
+                        playsinline
                      />
                 </Col>
             </Row>
@@ -80,6 +82,7 @@ const HomeScreen = (props) => {
                         muted
                         config={{ file: { attributes: { disablepictureinpicture: 'true' }}}}
                         loop
+                        playsinline
                      />
                 </Col>
             </Row>
@@ -103,6 +106,7 @@ const HomeScreen = (props) => {
                         muted
                         config={{ file: { attributes: { disablepictureinpicture: 'true' }}}}
                         loop
+                        playsinline
                      />
                 </Col>
             </Row>
