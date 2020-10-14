@@ -67,7 +67,7 @@ const AdminHomeScreen = () => {
                 <Link to="/"><b>Home</b></Link>
             </Row>
             <Row className="fa-paragraph-row1 d-flex justify-content-center">
-                <p style={{color:(msg.msgError ? "red" : (msg.msgBody === "" ? "white" : "black"))}}>{msg.msgBody !== "" ? msg.msgBody : "Hidden Text Here"}</p>
+                <p style={{color:(msg && msg.msgError ? "red" : (msg && msg.msgBody !== "" ? "black" : "white"))}}>{msg && msg.msgBody !== "" ? msg.msgBody : "Hidden Text Here"}</p>
             </Row>
             <Row className="fa-tab-row1 d-flex justify-content-center">
                 <Tabs className="fa-tabs" defaultActiveKey="unresolved" id="fa-tabs">

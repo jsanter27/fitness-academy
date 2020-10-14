@@ -12,13 +12,17 @@ const FATable = (props) => {
     const handleAction = (id) => {
         if (dataType === 'unresolved') {
             api.resolveTrialRequest(id).then( (result) => {
-                setMsg(result.message);
+                if (result && result.message) {
+                    setMsg(result.message);
+                }
                 refetch();
             });
         }
         else if (dataType === 'resolved') {
             api.unresolveTrialRequest(id).then( (result) => {
-                setMsg(result.message);
+                if (result && result.message){
+                    setMsg(result.message);
+                }
                 refetch();
             })
         }
