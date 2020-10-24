@@ -18,7 +18,7 @@ const ScheduleScreen = () => {
             <Row className="fa-paragraph-row1">
                 <Col className="d-fex justify-content-center">
                     <Image
-                        src="/fa-logo2.png"
+                        src="/schedule.png"
                         className="fa-schedule-img"
                         alt="Fitness Academy Schedule"
                         style={{maxWidth:"100%"}}

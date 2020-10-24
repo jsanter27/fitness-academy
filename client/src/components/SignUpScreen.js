@@ -21,22 +21,20 @@ const SignUpScreen = () => {
             </Row>
             <Row className="fa-paragraph-row1">
                 <Col className="d-flex justify-content-center">
-                    <p className="fa-paragraph">Sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text
-                        sample text sample text sample text sample text sample text 
-                        sample</p>
+                    <p className="fa-paragraph">
+                        Burn <b>500-1000</b> calories with our dynamic and smart workouts that are focused on building lean muscle and torching fat! 
+                        Our training is so effective that you continue burning fat up to <b>48 hrs</b> post workout! 
+                        Our Bootcamp workouts use only the most proven methods of strength training, interval &amp; metabolic style training.
+                    </p>
                 </Col>
             </Row>
             <Row className="fa-paragraph-row1">
                 <Col className="d-flex justify-content-center">
-                    <p className="fa-paragraph">Sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample</p>
+                    <p className="fa-paragraph">
+                    All of our Trainers have certifications from nationally accredited programs. 
+                    With experiences from Strength &amp; Conditioning Coaches at the collegiate level, Masters Degrees in Exercise Science, 
+                    with over 20yrs experience in the Fitness industry! We hold our trainers to the highest standard in the industry &amp; it shows! 
+                    </p>
                 </Col>
             </Row>
             <Row className="fa-paragraph-row1">

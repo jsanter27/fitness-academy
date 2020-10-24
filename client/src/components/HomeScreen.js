@@ -13,7 +13,7 @@ const HomeScreen = (props) => {
             <Row className="fa-logo-header">
                 <Col>
                     <Image
-                        src="/fa-logo1.png"
+                        src="/fa-logo3.png"
                         className="fa-logo-img"
                         alt="Fitness Academy"
                         style={{maxWidth:"100%"}}
@@ -40,13 +40,11 @@ const HomeScreen = (props) => {
             </Row>
             <Row className="fa-paragraph-row1">
                 <Col>
-                    <p className="fa-paragraph">Sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text
-                        sample text sample text sample text sample text sample text 
-                        sample</p>
+                    <p className="fa-paragraph">
+                        <b>OUR GOALS:</b><br/>
+                        To motivate clients to meet and exceed their fitness goals, encourage networking and personal development, 
+                        build an inclusive and diverse fitness community, and educate our clients on better nutritional and lifestyle habits.
+                    </p>
                 </Col>
             </Row>
             <Row className="fa-video-row">
@@ -64,13 +62,11 @@ const HomeScreen = (props) => {
             </Row>
             <Row className="fa-paragraph-row1">
                 <Col>
-                    <p className="fa-paragraph">Sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text
-                        sample text sample text sample text sample text sample text 
-                        sample</p>
+                    <p className="fa-paragraph">
+                        <b>OUR MISSION:</b><br/> 
+                        At The Fitness Academy our mission is simple - to deliver the BEST experiences possible through integrated group training, 
+                        personal training, balanced nutrition, and group engagement activities.
+                    </p>
                 </Col>
             </Row>
             <Row className="fa-video-row">
@@ -88,13 +84,9 @@ const HomeScreen = (props) => {
             </Row>
             <Row className="fa-paragraph-row1">
                 <Col>
-                    <p className="fa-paragraph">Sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text
-                        sample text sample text sample text sample text sample text 
-                        sample</p>
+                    <p className="fa-paragraph">    
+                        <b>Where you Train says everything about how you train!</b>
+                    </p>
                 </Col>
             </Row>
             <Row className="fa-video-row">
@@ -112,13 +104,9 @@ const HomeScreen = (props) => {
             </Row>
             <Row className="fa-paragraph-row1">
                 <Col>
-                    <p className="fa-paragraph">Sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text 
-                        sample text sample text sample text sample text sample text
-                        sample text sample text sample text sample text sample text 
-                        sample</p>
+                    <p className="fa-paragraph">
+                        <b>We offer everything the chains offer.... and what they don’t, guaranteed! So why pay more for less?!</b>
+                    </p>
                 </Col>
             </Row>
             <Footer />
