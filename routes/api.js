@@ -55,7 +55,8 @@ router.post('/trial', (req, res) => {
                         from: 'noreply@thefitnessacademyhv.com',
                         to: process.env.ADMIN_EMAIL,
                         subject: `New Trial Request: ${firstName} ${lastName}`,
-                        text: `\nREQUEST INFO:\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phoneNumber}\n`
+                        text: 'Resolve the request at https://thefitnessacademyhv.com/admin',
+                        html: '<p>Resolve the request <a href="https://thefitnessacademyhv.com/admin" target="_blank">here</a></p>'
                     };
                     const smtpTransporter = nodemailer.createTransport({
                         port: 465,
