@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const TrialRequest = require('../models/TrialRequest');
 const passport = require('passport');
+const nodemailer = require('nodemailer');
 
 require('../config/passport');
 require('dotenv').config();
@@ -48,8 +49,30 @@ router.post('/trial', (req, res) => {
                     sendDatabaseError(res);
                 if (!trialRequest)
                     sendError(res, "Could not send request to database");
-                else
-                    sendSuccess(res, "Successfully submitted request");
+                else {
+                    //sendSuccess(res, "Successfully submitted request");
+                    const mailOptions = {
+                        from: 'noreply@thefitnessacademyhv.com',
+                        to: process.env.ADMIN_EMAIL,
+                        subject: `New Trial Request: ${firstName} ${lastName}`,
+                        text: `\nREQUEST INFO:\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phoneNumber}\n`
+                    };
+                    const smtpTransporter = nodemailer.createTransport({
+                        port: 465,
+                        host: process.env.SMTP_HOST,
+                        secure: true,
+                        auth: {
+                            user: process.env.SMTP_USER,
+                            pass: process.env.SMTP_PASS
+                        }
+                    });
+                    smtpTransporter.sendMail(mailOptions, (err, info) => {
+                        if (err) {
+                            console.log(err.message);
+                        }
+                        sendSuccess(res, "Successfully submitted request");
+                    });
+                }
             });
         }
     });
